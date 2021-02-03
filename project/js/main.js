@@ -48,9 +48,10 @@ function getToppingList() {
 
     if (search_input.value) {
         var toppings = search_input.value.toLowerCase();
-
+        //debugger;
         for (var i = 0; i < jsonReponse.length; i++) {
             if (jsonReponse[i].name.toLowerCase().indexOf(toppings) !== -1) {
+                dropdown.style.display = 'block';
                 filteredListArr.push(jsonReponse[i].id);
                 if (filteredListArr.length === 0) dropdown.style.display = 'none';
                 toppingListDropdown.size = filteredListArr.length;
@@ -67,6 +68,8 @@ function appendOptionsToList(text, val) {
     let exists = selectedItemArr.length > 0 && selectedItemArr.includes(val);
     if (!exists) {
         toppingListDropdown.appendChild(createOptions);
+        createOptions.text = text;
+        createOptions.value = val;
     }
 
 }
