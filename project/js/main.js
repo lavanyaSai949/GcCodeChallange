@@ -72,6 +72,7 @@ function selectTopping(selectedVal) {
     if (selected_option.length) {
         selectedItemArr.push(selectedVal.value);
         displaySelectedOption(selected_option);
+        search_input.value = '';
         search_text.style.display = 'none';
         console.log(selectedItemArr);
     }
@@ -91,10 +92,13 @@ const displaySelectedOption = (option) => {
 
 //event listener for remove icon
 selectedToppingList.addEventListener('click', e => {
+    if (e.target.classList.contains('delete')) {
         var index = selectedItemArr.indexOf(e.target.id);
         if (index !== -1) {
             selectedItemArr.splice(index, 1);
         }
         if (selectedItemArr.length === 0) search_text.style.display = 'block';
         console.log(selectedItemArr);
+        e.target.parentElement.remove();
+    }
 })
