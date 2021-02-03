@@ -8,7 +8,23 @@
 </head>
 
 <body>
+    <div class="container">
+        <h2>Pizza Machine 5000</h2>
 
+        <div class="search-container">
+            <label>Search for Toppings</label>
+            <input id='search' type="text" autocomplete="off" />
+            <div id="dropdown">
+                <select name="toppingList" id="toppingListDropdown"></select>
+            </div>
+        </div>
+        <div class="selected-toppings">
+            <label>Selected Pizza Toppings</label>
+            <hr/>
+            <small class="search-text">search for toppings to get started</small>
+            <ul class="selected-toppings-list"></ul>
+        </div>
+    </div>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
