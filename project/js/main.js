@@ -27,17 +27,6 @@ toppingListDropdown.onclick = function() {
     selectTopping(this);
 };
 
-//append and display selected topping list template
-const displaySelectedOption = (option) => {
-    console.log(option);
-    var resp = jsonReponse.find(x => x.id == option);
-    const item = `
-      <li class="list-items">
-          <span>${resp.name}</span>
-          <span class="delete" id="${resp.id}">×</span>
-        </li>`;
-    selectedToppingList.innerHTML += item;
-};
 
 //get list based on entered values
 function getToppingList() {
@@ -74,3 +63,38 @@ function appendOptionsToList(text, val) {
     }
 
 }
+
+
+// invoke function on selection
+function selectTopping(selectedVal) {
+    dropdown.style.display = 'none';
+    const selected_option = selectedVal.value.trim();
+    if (selected_option.length) {
+        selectedItemArr.push(selectedVal.value);
+        displaySelectedOption(selected_option);
+        search_text.style.display = 'none';
+        console.log(selectedItemArr);
+    }
+}
+
+//append and display selected topping list template
+const displaySelectedOption = (option) => {
+    console.log(option);
+    var resp = jsonReponse.find(x => x.id == option);
+    const item = `
+      <li class="list-items">
+          <span>${resp.name}</span>
+          <span class="delete" id="${resp.id}">×</span>
+        </li>`;
+    selectedToppingList.innerHTML += item;
+};
+
+//event listener for remove icon
+selectedToppingList.addEventListener('click', e => {
+        var index = selectedItemArr.indexOf(e.target.id);
+        if (index !== -1) {
+            selectedItemArr.splice(index, 1);
+        }
+        if (selectedItemArr.length === 0) search_text.style.display = 'block';
+        console.log(selectedItemArr);
+})
