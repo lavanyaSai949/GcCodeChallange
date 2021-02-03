@@ -38,3 +38,35 @@ const displaySelectedOption = (option) => {
         </li>`;
     selectedToppingList.innerHTML += item;
 };
+
+//get list based on entered values
+function getToppingList() {
+
+    dropdown.style.display = 'none';
+    toppingListDropdown.options.length = 0;
+    filteredListArr = [];
+
+    if (search_input.value) {
+        var toppings = search_input.value.toLowerCase();
+
+        for (var i = 0; i < jsonReponse.length; i++) {
+            if (jsonReponse[i].name.toLowerCase().indexOf(toppings) !== -1) {
+                filteredListArr.push(jsonReponse[i].id);
+                if (filteredListArr.length === 0) dropdown.style.display = 'none';
+                toppingListDropdown.size = filteredListArr.length;
+                appendOptionsToList(jsonReponse[i].name, jsonReponse[i].id);
+            }
+        }
+    }
+    console.log('Done');
+}
+
+//append filtered options to select dropdown
+function appendOptionsToList(text, val) {
+    var createOptions = document.createElement('option');
+    let exists = selectedItemArr.length > 0 && selectedItemArr.includes(val);
+    if (!exists) {
+        toppingListDropdown.appendChild(createOptions);
+    }
+
+}
