@@ -20,9 +20,12 @@ let filteredListArr = [];
 //default dropdown should be hidden
 dropdown.style.display = 'none';
 
+//event listener for search input field
+search_input.addEventListener('keyup', getToppingList);
 
-
-
+toppingListDropdown.onclick = function() {
+    selectTopping(this);
+};
 
 //append and display selected topping list template
 const displaySelectedOption = (option) => {

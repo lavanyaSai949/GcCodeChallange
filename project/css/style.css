@@ -25,3 +25,29 @@ img {
     margin: auto;
     height: 100%;
 }
+
+h2 {
+    font-family: sans-serif;
+    font-weight: 100;
+    padding: 20px 0;
+}
+
+label {
+    text-align: left;
+    padding: 0 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+}
+
+.search-container {
+    position: relative;
+}
+
+.selected-toppings {
+    margin-top: 25px;
+}
+
+hr {
+    margin: 0;
+}
