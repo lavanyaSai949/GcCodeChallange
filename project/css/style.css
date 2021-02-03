@@ -85,7 +85,6 @@ select option {
     font-weight: 600;
 }
 
-
 select option:hover {
     background-color: #eeeeee;
     cursor: pointer;
@@ -106,10 +105,21 @@ ul.selected-toppings-list li.list-items {
     position: relative;
 }
 
+ul.selected-toppings-list li.list-items .delete {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    background: #bcbcbc;
+    color: #fff;
+    border-radius: 9px;
+    width: 16px;
+    text-align: center;
+}
 
 ul.selected-toppings-list li.list-items .delete:hover {
     cursor: pointer;
 }
+
 
 /* apply CSS to the select tag of  
          .dropdown-container div*/
@@ -130,6 +140,13 @@ input {
     transition: all 0.3s ease;
 }
 
+input:active,
+input:hover {
+    outline: none;
+    -moz-appearance: none !important;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none !important;
+}
 
 input[type="text"]:focus {
     outline: none;
