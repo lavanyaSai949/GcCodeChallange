@@ -52,3 +52,35 @@ hr {
     margin: 0;
 }
 
+.search-text {
+    padding-top: 7px;
+}
+
+#dropdown {
+    position: absolute;
+    margin-top: 8px;
+    width: 100%;
+    z-index: 1;
+}
+
+select {
+    width: 100%;
+    -moz-appearance: none !important;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none !important;
+    outline: none;
+    border: none;
+    box-shadow: 1px #ccc;
+    border-radius: 5px;
+    height: 100%;
+    min-height: 100%;
+    box-shadow: 0 1px 3px #666;
+    overflow: auto;
+}
+
+select option {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #808080;
+    font-weight: 600;
+}

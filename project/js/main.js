@@ -29,7 +29,7 @@ toppingListDropdown.onclick = function() {
 
 //append and display selected topping list template
 const displaySelectedOption = (option) => {
-    console.log(option)
+    console.log(option);
     var resp = jsonReponse.find(x => x.id == option);
     const item = `
       <li class="list-items">
@@ -55,6 +55,7 @@ function getToppingList() {
                 filteredListArr.push(jsonReponse[i].id);
                 if (filteredListArr.length === 0) dropdown.style.display = 'none';
                 toppingListDropdown.size = filteredListArr.length;
+                //appending the filtered toppings
                 appendOptionsToList(jsonReponse[i].name, jsonReponse[i].id);
             }
         }
